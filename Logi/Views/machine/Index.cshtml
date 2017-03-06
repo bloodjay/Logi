@@ -1,0 +1,40 @@
+﻿@model Logi.Models.tblMach
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("mach", "machine"))
+        {
+            <table>
+                <tr>          
+                    @Html.TextBoxFor(m => m.Mach_No, new { placeholder = "machine num" })
+                    @Html.DropDownListFor(n => n.Owner_Num, (IEnumerable<SelectListItem>) ViewBag.ItemsSelect)
+                </tr>
+                <tr>
+                    <td>
+                         @Html.TextBoxFor(m => m.Mach_No, new { placeholder = "Machine code" })
+                    </td>
+
+                    <td style="margin-left:15px">
+                         @Html.TextBoxFor(m => m.Mach_Desc, new { placeholder = "Description" })
+                    </td>
+
+                    <td>
+                    <input type="submit" value="Add New Machine">
+                    </td>
+
+                 </tr>            
+            </table>                        
+        }
+        @*@Html.TextBoxFor(m => m.Mach_No)*@
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable <Logi.Models.tblMach>
+@{
+    Layout = null;
+    WebGrid grid = new WebGrid(Model);    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>gridindex</title>
+</head>
+
+
+<body>
+    <div>     
+      @grid.GetHtml(
+       columns: grid.Columns(
+       grid.Column("Mach_No", "Machine number"),
+       grid.Column("Mach_Desc","Machine Description"),
+       grid.Column("Lease_Rate","Lease Rate"),
+       grid.Column("Owner_Num","Owner number"),
+       grid.Column("Active","Active"),
+       grid.Column(header:"Action",format:
+       @<text>
+        @Html.ActionLink("edit", "editt", "machine",new {a=item.Mach_No},null)
+       </text>)
+       )
+);
+    </div>
+</body>
+</html>

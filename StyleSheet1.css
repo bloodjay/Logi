@@ -1,0 +1,18 @@
+﻿body
+{
+}
+
+#loginbox
+{
+    width:250px;
+    height:200px;
+    background-color:lightyellow;
+    margin-left:380px;
+    margin-top:300px;
+}
+
+#loginhead
+{
+    background-color:black;
+    color:white;
+}
